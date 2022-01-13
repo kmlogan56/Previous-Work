@@ -1,0 +1,24 @@
+load('spambase.data');
+S = load('spambase.data');
+
+%% Problem 1.2
+%fitctree command
+x = S(1:4601, 1:57);
+y = S(1:4601, 58:58);
+t = fitctree(x, y,'CrossVal', 'on')
+view(t.Trained{1},'Mode','graph');
+
+%% Problem 1.3
+tsplit = fitctree(x, y, 'MaxNumSplits', 10, 'CrossVal', 'on');
+view(tsplit.Trained{1},'Mode','graph')
+
+%% Problem 1.6
+tsplit = fitctree(x, y, 'MaxNumSplits', 10);
+view(tsplit,'Mode','graph');
+imp = predictorImportance(tsplit);
+
+figure;
+bar(imp);
+title('Predictor Importance Estimates for Problem 1');
+ylabel('Estimates');
+xlabel('Predictors');
