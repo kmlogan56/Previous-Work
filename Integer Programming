@@ -34,25 +34,25 @@ opts = optimoptions('intlinprog','Display','iter'); % just an example
 
 Matlab output:
 
-LP: 					Optimal objective value is 1049.650000.
+LP: 				Optimal objective value is 1049.650000.
 
 Cut Generation: 		Applied 5 implication cuts, 7 mir cuts,
- 						2 strong CG cuts, 8 cover cuts,
- 						and 2 Gomory cuts.
-						Lower bound is 1177.382177.
+ 				2 strong CG cuts, 8 cover cuts,
+ 				and 2 Gomory cuts.
+				Lower bound is 1177.382177.
 																	
 Heuristics: 			Found 1 solution using total rounding.
- 						Upper bound is 1825.000000.
-						Relative gap is 35.32%.
+ 				Upper bound is 1825.000000.
+				Relative gap is 35.32%.
 																	
 Heuristics: 			Found 1 solution using rss.
- 						Upper bound is1525.000000.
- 						Relative gap is 22.61%.
+ 				Upper bound is1525.000000.
+ 				Relative gap is 22.61%.
 									
 Branch and Bound:
-	   nodes 		total		num	int		   integer			relative
-	explored 	 time (s) 	   solution 	      fval 			 gap (%)
- 	      37 		 0.08 		      2   1.525000e+03 	    0.000000e+00
+	   nodes 		total		num int		   integer		relative
+	explored 	     time (s) 	       solution 	      fval 		 gap (%)
+ 	      37 		 0.08 		      2       1.525000e+03 	    0.000000e+00
 	
 Optimal solution found.
 
