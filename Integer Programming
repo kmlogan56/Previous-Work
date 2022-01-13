@@ -1,0 +1,26 @@
+f = [600;585;700;190;150;200;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0];
+intcon = [1:21];
+Aineq = zeros(6,21);
+ Aineq(1,[7,8,9,10,11,1,4])=[2,2,4.5,1,4.1,-8,-2];
+ Aineq(2,[12,13,14,15,16,2,5])=[2.5,2.5,4.5,1.5,4.7,-8,-2];
+ Aineq(3,[17,18,19,20,21,3,6])=[2.1,2.1,4,2.5,4.5,-8,-2];
+ Aineq(4,[1,4])=[1,-1];
+ Aineq(5,[2,5])=[1,-1];
+ Aineq(6,[3,6])=[1,-1];
+bineq = [0;0;0;0;0;0];
+Aeq = zeros(5,21);
+ Aeq(1,[7,12,17])=[1,1,1];
+ Aeq(2,[8,13,18])=[1,1,1];
+ Aeq(3,[9,14,19])=[1,1,1];
+ Aeq(4,[10,15,20])=[1,1,1];
+ Aeq(5,[11,16,21])=[1,1,1];
+beq = [1;1;1;1;1];
+lb = [0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0];
+ub = [1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1];
+x0 = []; % no initial point
+opts = optimoptions('intlinprog','Display','iter'); % just an example
+ % see `doc linprog' for
+% more options
+[x,fval,status] = intlinprog(f,intcon,Aineq,bineq,Aeq,beq,lb,ub,x0,opts)
+% status == 1 means the certified optimal solution was found
+% other possible outcomes?
