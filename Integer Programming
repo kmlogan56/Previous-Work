@@ -23,8 +23,8 @@ lb = [0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0];
 ub = [1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1];
 x0 = []; % no initial point
 opts = optimoptions('intlinprog','Display','iter'); % just an example
- 													% see `doc linprog' for
-													% more options
+ 						    % see `doc linprog' for
+						    % more options
 													
 [x,fval,status] = intlinprog(f,intcon,Aineq,bineq,Aeq,beq,lb,ub,x0,opts)
 % status == 1 means the certified optimal solution was found
